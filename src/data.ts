@@ -66,6 +66,14 @@ export type Project = {
   tags: string[];
   link: string;
   accent: string;
+  role?: string; // set for team projects to make my contribution explicit
+};
+
+export type MiniProject = {
+  name: string;
+  blurb: string;
+  tags: string[];
+  link: string;
 };
 
 export const projects: Project[] = [
@@ -83,6 +91,19 @@ export const projects: Project[] = [
     accent: "#6366f1",
   },
   {
+    name: "CodeStreamAI",
+    blurb:
+      "An AI-powered code-review platform that runs retrieval-augmented review over your codebase — Bedrock + Pinecone embeddings, async review workers, and a Next.js dashboard.",
+    highlights: [
+      "RAG over code with Amazon Bedrock embeddings + Pinecone",
+      "FastAPI backend with Celery async workers, Postgres, and Redis",
+      "Cloud-native deploy: Terraform + AWS CDK + Lambda, in a pnpm/Turbo monorepo",
+    ],
+    tags: ["Python", "FastAPI", "Next.js", "AWS", "RAG"],
+    link: "https://github.com/Nishit24113/CodeStreamAI",
+    accent: "#a855f7",
+  },
+  {
     name: "Tether",
     blurb:
       "A reproducible benchmark for RAG answer faithfulness — measuring how well low-cost detectors catch hallucinations versus an LLM judge.",
@@ -96,6 +117,34 @@ export const projects: Project[] = [
     accent: "#22d3ee",
   },
   {
+    name: "LifeOps Copilot",
+    blurb:
+      "A multi-agent AI life copilot spanning inbox, budget, calendar, and career workflows.",
+    role: "Team project — I built the AI backend: the multi-agent pipeline, Google OAuth, and Gmail integration.",
+    highlights: [
+      "Multi-agent LLM pipeline (router, planner, extractor, action, review, memory)",
+      "Google OAuth + Gmail API + Vertex AI, with budget analytics services",
+      "FastAPI backend and Next.js frontend, deployed on Cloud Run",
+    ],
+    tags: ["FastAPI", "Next.js", "AI Agents", "GCP"],
+    link: "https://github.com/ashah5123/LifeOps-Copilot",
+    accent: "#f59e0b",
+  },
+  {
+    name: "ClicklessAI",
+    blurb:
+      "Voice- and agent-driven shopping automation that browses retailers and ranks products for you.",
+    role: "Team project — I own the browser-automation scraper engine and the three-stage ML ranking pipeline.",
+    highlights: [
+      "Playwright scraping engine (Amazon, Walmart) with stealth and checkout flows",
+      "Three-stage ML ranking: BM25 → LambdaMART → SBERT re-ranking",
+      "Async FastAPI + aiohttp backend",
+    ],
+    tags: ["Python", "Playwright", "ML Ranking", "FastAPI"],
+    link: "https://github.com/jashkarangiya/clicklessAI-SWM",
+    accent: "#10b981",
+  },
+  {
     name: "CloudPulse",
     blurb:
       "A serverless observability platform on AWS — metrics, logs, distributed tracing, alerting, and dashboards, with 2–3 line SDK integration. A self-hostable take on Datadog/New Relic.",
@@ -106,7 +155,31 @@ export const projects: Project[] = [
     ],
     tags: ["AWS", "Observability", "Serverless", "Python"],
     link: "https://github.com/Nishit24113/cloudpulse",
-    accent: "#f59e0b",
+    accent: "#0ea5e9",
+  },
+];
+
+export const moreProjects: MiniProject[] = [
+  {
+    name: "Momentum Kanban",
+    blurb:
+      "A realtime Kanban board with Supabase row-level security, optimistic drag-and-drop, and a live demo.",
+    tags: ["React", "TypeScript", "Supabase"],
+    link: "https://github.com/Nishit24113/momentum-kanban-board",
+  },
+  {
+    name: "Sign-Language YOLO",
+    blurb:
+      "Real-time ASL letter detection with a custom-trained YOLOv8 model, plus GenAI sentence generation.",
+    tags: ["Python", "YOLOv8", "OpenCV"],
+    link: "https://github.com/Nishit24113/sign-language-yolo",
+  },
+  {
+    name: "Fruit Disease Detection",
+    blurb:
+      "A CNN fruit-disease classifier with LLaMA-generated treatment guidance and multi-language output.",
+    tags: ["Python", "TensorFlow", "LLM"],
+    link: "https://github.com/Nishit24113/fruit-disease-detection",
   },
 ];
 

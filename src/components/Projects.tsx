@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Users } from "lucide-react";
 import Section from "./Section";
-import { projects } from "../data";
+import { projects, moreProjects } from "../data";
 
 export default function Projects() {
   return (
@@ -33,7 +33,13 @@ export default function Projects() {
                 size={22}
               />
             </div>
-            <p className="mb-4 text-slate-600 dark:text-slate-300">{p.blurb}</p>
+            <p className="mb-3 text-slate-600 dark:text-slate-300">{p.blurb}</p>
+            {p.role && (
+              <p className="mb-3 flex items-start gap-2 text-sm font-medium text-accent">
+                <Users size={15} className="mt-0.5 shrink-0" />
+                <span>{p.role}</span>
+              </p>
+            )}
             <ul className="mb-4 space-y-1.5">
               {p.highlights.map((h) => (
                 <li
@@ -53,6 +59,47 @@ export default function Projects() {
                 <span
                   key={t}
                   className="rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-500 dark:border-white/10 dark:text-slate-400"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </motion.a>
+        ))}
+      </div>
+
+      <h3 className="mb-5 mt-14 font-display text-xl font-semibold text-slate-500 dark:text-slate-400">
+        More projects
+      </h3>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {moreProjects.map((p, i) => (
+          <motion.a
+            key={p.name}
+            href={p.link}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4, delay: i * 0.06 }}
+            whileHover={{ y: -4 }}
+            className="group glass flex flex-col rounded-xl p-5"
+          >
+            <div className="mb-2 flex items-center justify-between">
+              <h4 className="font-display font-semibold">{p.name}</h4>
+              <ArrowUpRight
+                className="text-slate-400 transition group-hover:text-accent"
+                size={18}
+              />
+            </div>
+            <p className="mb-3 flex-1 text-sm text-slate-600 dark:text-slate-300">
+              {p.blurb}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {p.tags.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-slate-200 px-2.5 py-0.5 text-xs text-slate-500 dark:border-white/10 dark:text-slate-400"
                 >
                   {t}
                 </span>
