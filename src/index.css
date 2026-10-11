@@ -1,0 +1,39 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/space-grotesk";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-800 antialiased transition-colors duration-300;
+    @apply dark:bg-[#0a0a12] dark:text-slate-200;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent via-accent-soft to-cyan-400 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply border border-slate-200/60 bg-white/60 backdrop-blur-md;
+    @apply dark:border-white/10 dark:bg-white/5;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
