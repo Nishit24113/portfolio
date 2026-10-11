@@ -70,6 +70,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "StreamForge",
+    blurb:
+      "A serverless real-time data-pipeline platform on AWS — ingestion, transforms, anomaly detection, dead-letter replay, health scoring, cost analysis, and alerting.",
+    highlights: [
+      "50K events/sec ingestion with sub-second transform latency",
+      "Schema registry, DLQ auto-replay, and composite SLO health scoring",
+      "280+ automated tests, CI, infrastructure as code (AWS CDK)",
+    ],
+    tags: ["AWS", "Lambda", "Kinesis", "Python", "React"],
+    link: "https://github.com/Nishit24113/streamforge",
+    accent: "#6366f1",
+  },
+  {
     name: "Tether",
     blurb:
       "A reproducible benchmark for RAG answer faithfulness — measuring how well low-cost detectors catch hallucinations versus an LLM judge.",
@@ -83,29 +96,16 @@ export const projects: Project[] = [
     accent: "#22d3ee",
   },
   {
-    name: "StreamForge",
+    name: "CloudPulse",
     blurb:
-      "A serverless real-time data-pipeline platform on AWS — ingestion, transforms, anomaly detection, DLQ replay, health scoring, cost analysis, and alerting.",
+      "A serverless observability platform on AWS — metrics, logs, distributed tracing, alerting, and dashboards, with 2–3 line SDK integration. A self-hostable take on Datadog/New Relic.",
     highlights: [
-      "50K events/sec ingestion with sub-second transform latency",
-      "Dead-letter replay, schema registry, and composite SLO health scoring",
-      "280+ automated tests, CI, infrastructure as code (AWS CDK)",
+      "Metrics, logs, and distributed tracing with PromQL-like queries",
+      "Threshold + anomaly-detection alerting across multiple channels",
+      "Serverless AWS backend with real-time dashboards and SDKs",
     ],
-    tags: ["AWS", "Lambda", "Kinesis", "Python", "React"],
-    link: "https://github.com/Nishit24113/streamforge",
-    accent: "#6366f1",
-  },
-  {
-    name: "LifeOps Copilot",
-    blurb:
-      "A six-agent AI platform (Next.js, FastAPI, GCP) automating everyday workflows with planning and tool use.",
-    highlights: [
-      "Vertex AI Gemini, Gmail API, and Google OAuth integration",
-      "95% task-completion rate across four workflow types",
-      "Deployed on Cloud Run with auto-scaling",
-    ],
-    tags: ["Next.js", "FastAPI", "AI Agents", "GCP"],
-    link: "https://github.com/Nishit24113",
+    tags: ["AWS", "Observability", "Serverless", "Python"],
+    link: "https://github.com/Nishit24113/cloudpulse",
     accent: "#f59e0b",
   },
 ];
