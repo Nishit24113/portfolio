@@ -76,7 +76,7 @@ export default function Hero() {
           <img
             src={headshot}
             alt="Nishit Patel"
-            className="relative h-48 w-48 rounded-full object-cover object-top shadow-2xl ring-4 ring-white/10 md:h-64 md:w-64"
+            className="relative h-48 w-48 rounded-full object-cover object-[50%_18%] shadow-2xl ring-4 ring-black/5 dark:ring-white/10 md:h-64 md:w-64"
           />
         </motion.div>
       </div>
