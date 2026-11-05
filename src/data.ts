@@ -23,12 +23,12 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     company: "ASU — Cloud Innovation Center (powered by AWS)",
-    role: "Full Stack Developer",
+    role: "AI Cloud Developer",
     period: "Jan 2026 — Present",
     location: "Scottsdale, AZ",
     points: [
       "Embedded with clients to scope workflows and ship production AI systems on their infrastructure.",
-      "Built a multi-channel AI platform (Python/FastAPI, React, AWS) handling 500+ daily interactions across chat, voice, forms, and WhatsApp.",
+      "Built a multi-channel AI platform (Python/FastAPI, React, AWS) across chat, voice, forms, and WhatsApp.",
       "Deployed AI agents on Amazon Bedrock AgentCore with Claude and RAG, automating ~80% of inquiry responses.",
       "Engineered a real-time voice pipeline (WebSocket, Amazon Nova Sonic, Twilio) with <10ms relay latency.",
     ],
